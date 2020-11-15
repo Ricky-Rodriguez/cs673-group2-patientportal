@@ -1,0 +1,251 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: background-color 0.5s ease;
+  z-index: 1000;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.nav {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  transition: height 0.5s ease;
+}
+
+.nav a {
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+}
+
+.nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  margin-left: auto;
+}
+
+.nav-link {
+  margin: 0 2rem;
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  /* background-color: #fff; */
+  background-color: #7c9ea6;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/*may not use
+/* Apply styles after scroll */
+.scrolling-active {
+  background-color: white;
+  box-shadow: 0 3px 1rem egba(0, 0, 0, 0.1);
+}
+
+.scrolling-active .nav {
+  height: 3rem;
+}
+
+/* Apply styles after scroll end */
+.scrolling-active .nav a {
+  color: #313131;
+}
+
+.book {
+  min-height: 80vh;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  background-color: #51b4caa1;
+  padding-top: 150px;
+}
+
+.book h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  font-size: 3rem;
+  padding-bottom: 25px;
+}
+
+/*
+
+form {
+  width: 800px;
+  display: flex;
+  margin-top: 50px;
+  margin-left: 50px;
+} */
+
+/* input {
+} */
+
+.main-form {
+  width: 550px;
+  margin: auto;
+}
+
+.previous {
+  min-height: 60vh;
+  width: auto;
+  display: block;
+  background-color: #52a1b1cb;
+}
+
+.previous h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  font-size: 2rem;
+}
+
+.text-box {
+  width: 650px;
+  margin: 100px auto;
+  position: relative;
+}
+
+.text-box p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  position: relative;
+  top: 50%;
+}
+
+footer {
+  height: 15vh;
+  width: 100%;
+  background-color: #7c9ea6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.social-list {
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-item {
+  list-style: none;
+  padding: 0 4rem;
+}
+
+.social-link {
+  display: flex;
+  font-size: 2rem;
+  text-decoration: none;
+  /* color: #b6bbc5; */
+  color: #7c9ea6;
+  width: 4rem;
+  height: 4rem;
+
+  border-radius: 50%;
+  /* box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.1),
+      -1rem -1rem 2rem rgba(255, 255, 255, 0.5); */
+  box-shadow: 1rem 1rem 2rem rgba(24, 53, 64, 0.541),
+    -1rem -1rem 2rem rgba(156, 179, 184, 0.7);
+}
+
+.social-link i {
+  margin: auto;
+  /* color: rgba(24, 53, 64, 1); */
+  color: rgba(242, 183, 5, 1);
+  /* color: rgba(217, 142, 4, 1); */
+}
+
+.social-link:hover {
+  /* box-shadow: inset 1rem 1rem 2rem rgba(0, 0, 0, 0.1),
+      inset -1rem -1rem 2rem rgba(255, 255, 255, 0.5); */
+  box-shadow: inset 1rem 1rem 2rem rgba(24, 53, 64, 0.541),
+    inset -1rem -1rem 2rem rgba(156, 179, 184, 0.7);
+}
+
+.single-page {
+  min-height: 85vh;
+}
+
+/* televisit */
+
+#videos {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#subscriber {
+  /* position: absolute; */
+  /* left: 0;
+  top: 0; */
+  width: 100%;
+  height: 100%;
+  /* z-index: 10; */
+}
+
+#publisher {
+  position: absolute;
+  width: 360px;
+  height: 240px;
+  bottom: 10px;
+  left: 10px;
+  /* z-index: 100; */
+  /* border: 3px solid white;
+  border-radius: 3px; */
+}
+
+/* Hacky Fixes */
+.OT_video-loading {
+  display: none !important;
+}
+.OT_video-unsupported {
+  display: none !important;
+}

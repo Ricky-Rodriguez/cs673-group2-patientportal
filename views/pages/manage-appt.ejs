@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body>
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <div class="book">
+        <h1>Book a new appointment</h1>
+        <form action="apptform.rb" method="POST" class="main-form">
+            <label for="office">Please select an office</label>
+            <select name="office" id="office" class="form-control">
+                <option value="newark">Newark</option>
+                <option value="montclair">Montclair</option>
+                <option value="clifton">Clifton</option>
+            </select>
+            <label for="doctor">Please select a doctor</label>
+            <select name="doctor" id="doctor" class="form-control">
+                <option value="stark">Dr. Stark</option>
+                <option value="romanoff">Dr. Romanoff</option>
+                <option value="banner">Dr. Banner</option>
+            </select>
+            <!-- <select name="day" id="day" class="form-control">
+                <option value="stark">Monday</option>
+                <option value="romanoff">Tuesday</option>
+                <option value="banner">Wednesday</option>
+                <option value="stark">Thursday</option>
+                <option value="romanoff">Friday</option>
+                <option value="banner">Saturday</option>
+                <option value="banner">Sunday</option>
+            </select> -->
+            <label for="doctor">Please select a date</label>
+            <input type="date" id="appt_date" name="appt_date" class="form-control">
+            <label for="time">Please select a time</label>
+            <select name="time" id="time" class="form-control">
+                
+            </select>
+            <!-- <label for="end">Please select an end time</label>
+            <select name="end" id="start" class="form-control"> -->
+                
+            </select>
+            
+
+            <button type="submit" name="Submit" class="btn btn-primary">Submit</button>
+        </form>
+</div>   
+
+    <div class="previous">
+        <h2>Previous Appointments</h2>
+        <div class="text-box">
+            <P>09/10/2020</P>
+            <P>09/25/2019</P>
+            <P>09/14/2018</P>
+            <P>09/08/2016</P>
+            <P>09/22/2015</P> 
+            <P>07/08/2014</P>
+            <P>10/15/2013</P>
+            <P>09/01/2012</P>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>

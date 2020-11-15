@@ -1,0 +1,23 @@
+{
+  "name": "cs673-group2-patientportal",
+  "version": "1.0.0",
+  "description": "Patient Portal Frontend",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ricky-Rodriguez/cs673-group2-patientportal.git"
+  },
+  "author": "Ricky Rodriguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ricky-Rodriguez/cs673-group2-patientportal/issues"
+  },
+  "homepage": "https://github.com/Ricky-Rodriguez/cs673-group2-patientportal#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
+  }
+}

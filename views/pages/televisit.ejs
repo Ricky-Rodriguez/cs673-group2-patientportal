@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+    <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
+    <script src="/js/tele.js"></script>
+</head>
+
+<body>
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <div class="book single-page">
+
+        <!-- Content -->
+<div class="container-fluid">
+
+<!-- Tele Visit -->
+<div class="row ">
+  <!-- Video Session -->
+  <div class="col-8" id="video-container">
+    
+  </div>
+
+
+<form class="main-form">
+
+    
+        <div class="col">
+            <div class="form-group">
+                <label for="end" > </label>
+                <input type="submit" id="end" name="end" value="End Call" class="form-control"><br>
+            </div>
+        </div>
+       
+    </div>
+</main>
+
+<div id="videos">
+    <div id="subscriber"></div>
+    <div id="publisher"></div>
+</div>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+</html>
