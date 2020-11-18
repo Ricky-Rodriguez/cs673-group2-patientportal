@@ -147,12 +147,14 @@ form {
   position: relative;
 }
 
-.text-box p {
+.text-box li {
   margin: 0;
   padding: 0;
   text-align: center;
   position: relative;
   top: 50%;
+  list-style-type: none;
+  padding-bottom: 5px;
 }
 
 footer {

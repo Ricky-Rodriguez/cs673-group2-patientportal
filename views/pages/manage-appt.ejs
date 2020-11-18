@@ -26,6 +26,12 @@
                 <option value="romanoff">Dr. Romanoff</option>
                 <option value="banner">Dr. Banner</option>
             </select>
+            <label for="visit">Please select a type of visit</label>
+            <select name="visit" id="visit" class="form-control">
+                <option value="true">Tele-Visit</option>
+                <option value="false">In-Person</option>
+                
+            </select>
             <!-- <select name="day" id="day" class="form-control">
                 <option value="stark">Monday</option>
                 <option value="romanoff">Tuesday</option>
@@ -39,14 +45,11 @@
             <input type="date" id="appt_date" name="appt_date" class="form-control">
             <label for="time">Please select a time</label>
             <select name="time" id="time" class="form-control">
-                <option value="9">9:00 AM</option>
-                <option value="9.5">9:30 AM</option>
-                <option value="10">10:00 AM</option>
-                <option value="10.5">10:30 AM</option>
-                <option value="11">11:00 AM</option>
-                <option value="11.5">11:30 AM</option>
-                <option value="1">1:00 PM</option>
-                <option value="1.5">1:30 PM</option>
+                <option value="9">09:00 - 09:30 </option>
+                <option value="9.5">09:30 - 10:00 </option>
+                <option value="10">10:00 - 10:30 </option>
+                <option value="11">11:00 - 11:30</option>
+                <option value="1.5">13:30 - 14:00</option>
             </select>
             <!-- <label for="end">Please select an end time</label>
             <select name="end" id="start" class="form-control"> -->
@@ -59,17 +62,13 @@
 </div>   
 
     <div class="previous">
-        <h2>Previous Appointments</h2>
-        <div class="text-box">
-            <P>09/10/2020</P>
-            <P>09/25/2019</P>
-            <P>09/14/2018</P>
-            <P>09/08/2016</P>
-            <P>09/22/2015</P> 
-            <P>07/08/2014</P>
-            <P>10/15/2013</P>
-            <P>09/01/2012</P>
-        </div>
+        <h2>Upcoming Appointments</h2>
+        <ul class="text-box">
+           <li> <a href="/televisit"><button class="btn btn-primary">12/10/2020 at 16:00</button></a></li>
+           <li><a href="/televisit"><button class="btn btn-primary">09/25/2021 at 09:00</button></a></li>
+            
+            
+        </ul>
     </div>
 </main>
 
