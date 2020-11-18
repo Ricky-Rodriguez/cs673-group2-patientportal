@@ -10,14 +10,14 @@ document.addEventListener('DOMContentLoaded', function() {
     var session = OT.initSession(apiKey, sessionId);
 
     // create publisher
-    var publisher = OT.initPublisher('publisher');
+    var publisher = OT.initPublisher('publisher', {});
     session.connect(token, function(err) {
     // publish publisher
     session.publish(publisher);
     });
 
     // create subscriber
-    session.on('streamCreated', 'subscriber', function(event) {
-    session.subscribe(event.stream);
+    session.on('streamCreated', function(event) {
+    session.subscribe(event.stream,'subscriber');
     });
 })

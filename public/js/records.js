@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
        var aptId  = apt.aptId;
        var aptTime = apt.time;
 
-       var listItem = '<li class="list-group-item" id="'+aptId+'" >'+aptDate+' at '+aptTime+'<button type="button" class="btn btn-primary summaryBtn" data-toggle="modal" data-target="#summary">Consultation Summary</button></li>'
+       var listItem = '<li class="list-group-item records" id="'+aptId+'" >'+aptDate+' at '+aptTime+'<button type="button" class="btn btn-primary summaryBtn" data-toggle="modal" data-target="#summary">Consultation Summary</button></li>'
 
         console.log(apt.aptId)
 
