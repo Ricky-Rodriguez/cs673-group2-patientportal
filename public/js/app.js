@@ -1,3 +1,5 @@
+const UI_HELPER_API = "http://localhost:3000";
+
 // const navList = document.querySelector(".nav-list");
 // const navItems = document.querySelectorAll(".nav-items");
 // const header = document.querySelector("header");

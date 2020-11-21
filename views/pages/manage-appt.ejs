@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <%- include('../partials/head'); %>
+    <script src="/js/newAppt.js"></script>
 </head>
 
 <body>
@@ -13,7 +14,7 @@
 <main>
     <div class="book">
         <h1>Book a new appointment</h1>
-        <form action="apptform.rb" method="POST" class="main-form">
+        <form method="POST" class="main-form">
             <label for="office">Please select an office</label>
             <select name="office" id="office" class="form-control">
                 <option value="newark">Newark</option>
@@ -22,9 +23,8 @@
             </select>
             <label for="doctor">Please select a doctor</label>
             <select name="doctor" id="doctor" class="form-control">
-                <option value="stark">Dr. Stark</option>
-                <option value="romanoff">Dr. Romanoff</option>
-                <option value="banner">Dr. Banner</option>
+             <!-- <option value="">Please Select a Doctor</option> -->
+                <!-- Append for JQUERY -->
             </select>
             <label for="visit">Please select a type of visit</label>
             <select name="visit" id="visit" class="form-control">
@@ -32,24 +32,13 @@
                 <option value="false">In-Person</option>
                 
             </select>
-            <!-- <select name="day" id="day" class="form-control">
-                <option value="stark">Monday</option>
-                <option value="romanoff">Tuesday</option>
-                <option value="banner">Wednesday</option>
-                <option value="stark">Thursday</option>
-                <option value="romanoff">Friday</option>
-                <option value="banner">Saturday</option>
-                <option value="banner">Sunday</option>
-            </select> -->
-            <label for="doctor">Please select a date</label>
+          
+            <label for="appt_date">Please select a date</label>
             <input type="date" id="appt_date" name="appt_date" class="form-control">
+           
             <label for="time">Please select a time</label>
             <select name="time" id="time" class="form-control">
-                <option value="9">09:00 - 09:30 </option>
-                <option value="9.5">09:30 - 10:00 </option>
-                <option value="10">10:00 - 10:30 </option>
-                <option value="11">11:00 - 11:30</option>
-                <option value="1.5">13:30 - 14:00</option>
+                
             </select>
             <!-- <label for="end">Please select an end time</label>
             <select name="end" id="start" class="form-control"> -->
@@ -57,7 +46,7 @@
             </select>
             
 
-            <button type="submit" name="Submit" class="btn btn-primary">Submit</button>
+            <button type="submit" name="Submit" class="btn btn-primary" id="bookApptBtn">Submit</button>
         </form>
 </div>   
 
