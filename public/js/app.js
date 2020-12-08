@@ -1,4 +1,5 @@
 const UI_HELPER_API = "http://localhost:3000";
+const INTERNAL_API = window.location.origin;
 
 // const navList = document.querySelector(".nav-list");
 // const navItems = document.querySelectorAll(".nav-items");
@@ -50,3 +51,28 @@ window.addEventListener("scroll", function() {
 //    console.log(this)
 //    });
 
+// Helper Method: Format Date Time (YYYY-DD-MMTHH:mm)
+function FormatDateTime(dateTimeObject) {
+    // Add 0's in front of single digits
+    var month = (dateTimeObject.getUTCMonth() + 1);
+    if (month < 10) {
+      month = "0" + month;
+    }
+    var day = dateTimeObject.getUTCDate();
+    if (day < 10) {
+      day = "0" + day;
+    }
+    var minutes = dateTimeObject.getMinutes();
+    if (minutes < 10) {
+      minutes = "0" + minutes;
+    }
+    var hours = dateTimeObject.getUTCHours();
+    if (hours < 10) {
+      hours = "0" + hours;
+    }
+    // Format as YYYY-DD-MMTHH:mm
+    var dateTime = dateTimeObject.getUTCFullYear() + "-" + month + "-" + day +
+      "T" + hours + ":" + minutes;
+  
+    return dateTime;
+  }

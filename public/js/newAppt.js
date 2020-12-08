@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', function (){
 
+var today = new Date();
+var monthToday = today.getUTCMonth();
+var dayToday = today.getDay();
 // $(#time)
 
 
@@ -14,12 +17,29 @@ document.addEventListener('DOMContentLoaded', function (){
 
 $.ajax({
     type: "GET",
-    url: UI_HELPER_API + "/doctors",
+    url: INTERNAL_API + "/doctors",
     data: {},
     success: function(res) {
       // Iterate over response and append to DOM
       for (var i=0; i < res.length; i++) {     
-       $("#doctor").append('<option value="' + res[i].doctorId + '">' + res[i].doctorName + '</option>');
+       $("#doctor").append('<option value="' + res[i].id + '">' + res[i].name + '</option>');
+      }
+    }
+  });
+
+  $.ajax({
+    type: "GET",
+    url: INTERNAL_API + "/upcomingapts",
+    data: {
+      "patientId" : 1, //TODO 
+      "startMonth" : monthToday,
+      "startDate" : dayToday,
+    },
+    success: function(res) {
+      console.log(res)
+      // Iterate over response and append to DOM
+      for (var i=0; i < res.length; i++) {     
+       $("#upcomingapts").append('<li><a href="/televisit?appointmentId='+ res[i].appointment_id +'"><button class="btn btn-primary">' + FormatDateTime(new Date(res[i].start_time)).replace("T"," at ") + ' </button></a></li>');
       }
     }
   });
@@ -29,6 +49,7 @@ $.ajax({
       console.log(this);
       var date = new Date($(this).val());
       var day = date.getUTCDate();
+      console.log(day)
       var month = date.getUTCMonth() + 1;
       var year = date.getUTCFullYear();
       var doctorId = $('#doctor').val();
@@ -36,13 +57,15 @@ $.ajax({
       // First, get Open Timeslots
     $.ajax({
         type: "GET",
-        url: UI_HELPER_API + "/open",
+        url: INTERNAL_API + "/unbooked",
         data: {
           "doctorId" : doctorId,
           "startMonth" : month,
-          "startDate" : day,
+          "startDay" : day,
           "endMonth" : month,
-          "endDate" : day
+          "endDay" : day,
+          "startYear" : year,
+          "endYear" : year
         },
         success: function (res1) {
           // Format and Append all Open Slots
@@ -61,14 +84,14 @@ $('#bookApptBtn').on('click', function() {
     var doctorId = $('#doctor').val();
     var patientId = 1; // TODO
     var isTeleVisit = $('#visit').val();
-    var startDateTime =$('#appt_date').val() + "T" + $('#time').val().split('-')[0].replace(':','-');
-    var endDateTime = $('#appt_date').val() + "T" + $('#time').val().split('-')[1].replace(':','-');
+    var startDateTime =$('#appt_date').val() + "T" + $('#time').val().split('-')[0];
+    var endDateTime = $('#appt_date').val() + "T" + $('#time').val().split('-')[1];
     // var startTime = $('#time').val().split('-')[0];
     // var endTime =  $('#time').val().split('-')[1];
 
     $.ajax({
         type:"POST",
-        url: UI_HELPER_API + "/open",
+        url: INTERNAL_API + "/open",
         data:{
          "doctorId" : doctorId,
          "patientId": patientId,
@@ -77,12 +100,20 @@ $('#bookApptBtn').on('click', function() {
          "isTeleVist": isTeleVisit
         },
         success: function(res){
-            console.log('booked');
+            alert('Your appointment has been booked.');
+            location.reload();
             return false;
-        }
+        },
+        error: function(err){
+          alert('ERROR - Booking Failed');
+          console.log(err);
+          return false;
+      },
     })
+
     return false;
 })
 
 
 })
+
