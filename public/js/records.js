@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
         type: "GET",
         url: INTERNAL_API + "/upcomingapts",
         data: {
-          "patientId" : 1, //TODO 
+          "patientId" : PATIENTID, //TODO 
         },
         success: function(res) {
           console.log(res)
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
       // } 
         // );
 
-      
+      //Modal API
 
         $(document).on("click", ".summaryBtn", function() {
         
@@ -65,11 +65,14 @@ document.addEventListener("DOMContentLoaded", function() {
         type: "GET",
         url: INTERNAL_API + "/summary",
         data: {
-          "appointmentId" : myAptId, //TODO 
+          "appointmentId" : myAptId,
+          // "summary" :   //TODO 
         },
         success: function(res) {
           console.log(res)
-         //TODO
+            
+            $("#constSummary").text(res.summary );
+           
         },
         error: function(error){
           $("#constSummary").text("No summary records found.")

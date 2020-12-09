@@ -22,7 +22,7 @@ $.ajax({
     success: function(res) {
       // Iterate over response and append to DOM
       for (var i=0; i < res.length; i++) {     
-       $("#doctor").append('<option value="' + res[i].id + '">' + res[i].name + '</option>');
+       $("#doctor").append('<option value="' + res[i].ID + '">' + res[i].Name + '</option>');
       }
     }
   });
@@ -31,7 +31,7 @@ $.ajax({
     type: "GET",
     url: INTERNAL_API + "/upcomingapts",
     data: {
-      "patientId" : 1, //TODO 
+      "patientId" : PATIENTID, //TODO 
       "startMonth" : monthToday,
       "startDate" : dayToday,
     },
@@ -82,7 +82,7 @@ $.ajax({
 
 $('#bookApptBtn').on('click', function() {
     var doctorId = $('#doctor').val();
-    var patientId = 1; // TODO
+    var patientId = PATIENTID; // TODO
     var isTeleVisit = $('#visit').val();
     var startDateTime =$('#appt_date').val() + "T" + $('#time').val().split('-')[0];
     var endDateTime = $('#appt_date').val() + "T" + $('#time').val().split('-')[1];
@@ -97,7 +97,7 @@ $('#bookApptBtn').on('click', function() {
          "patientId": patientId,
          "startDateTime" : startDateTime,
          "endDateTime" : endDateTime,
-         "isTeleVist": isTeleVisit
+         "isTeleVisit": isTeleVisit
         },
         success: function(res){
             alert('Your appointment has been booked.');

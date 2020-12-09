@@ -1,5 +1,6 @@
-const UI_HELPER_API = "http://localhost:3000";
+
 const INTERNAL_API = window.location.origin;
+const PATIENTID = 70;
 
 // const navList = document.querySelector(".nav-list");
 // const navItems = document.querySelectorAll(".nav-items");

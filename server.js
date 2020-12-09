@@ -352,12 +352,27 @@ app.get('/unbooked', function(req, res) {
     // Query UI helper
     axios.get(UI_HELPER_API + '/all_doctors', {})
     .then(function (response) {
-      res.json(response.data);
+      res.json(response.data.doctor);
     })
     .catch(function (error) {
       console.log("Error calling UI Helper!");
       console.log(error);
       res.status(500).send('Error calling API!');
+    })
+  });
+
+  app.get("/summary", function(req, res) {
+    // Query UI helper
+    axios.get('https://sdpm-appointment-service.herokuapp.com/appointment/' + req.query.appointmentId + '/consultation_summary?download_type=json' , {
+
+    })
+    .then(function (response) {
+      res.json(response.data);
+    })
+    .catch(function (error) {
+      console.log("Error calling UI Helper!");
+      console.log(error);
+      res.status(500).send(error);
     })
   });
 
