@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
           for (var i=0; i < res.length; i++) {     
             var listItem = '<li class="list-group-item records" id="'+res[i].appointment_id+'" > ' + FormatDateTime(new Date(res[i].start_time)).replace("T"," at ") + 
             ' <button type="button" class="btn btn-primary summaryBtn" data-toggle="modal" data-target="#summary" >Consultation Summary</button>' +  
-            '<a href = "https://sdpm-appointment-service.herokuapp.com/appointment/3/charts/1" download> <button type="submit" class="btn btn-primary chartBtn" >Chart Notes</button></a></li>'
+            '<a href = "https://sdpm-appointment-service.herokuapp.com/appointment/59/charts/1" download> <button type="submit" class="btn btn-primary chartBtn" >Chart Notes</button></a></li>'
             $("#summaryList").prepend(listItem)
           //  $("#upcomingapts").append('<li><a href="/televisit?appointmentId='+ res[i].appointment_id +'"><button class="btn btn-primary">' + FormatDateTime(new Date(res[i].start_time)).replace("T"," at ") + ' </button></a></li>');
           }
